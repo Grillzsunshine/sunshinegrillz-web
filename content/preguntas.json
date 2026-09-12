@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Preguntas frecuentes",
+  "titulo": "Lo que todos preguntan.",
+  "titulo_destacado": "preguntan",
+  "items": [
+    { "pregunta": "¿Cuánto valen unos grillz?", "respuesta": "Depende del material (oro 18K o plata 980), la cantidad de dientes y las piedras que elijas. Escríbenos con lo que tienes en mente y te damos el precio al instante." },
+    { "pregunta": "¿Cómo es el proceso?", "respuesta": "Primero la toma de molde (en Medellín, con cita), después fabricamos tu pieza a mano sobre ese molde y por último la entrega con ajuste. Todo a tu medida." },
+    { "pregunta": "¿Hacen envíos a otras ciudades?", "respuesta": "Sí. Trabajamos en Medellín y enviamos a toda Colombia. Si estás en otra ciudad, por WhatsApp te explicamos cómo iniciar tu pieza a distancia." },
+    { "pregunta": "¿Cómo cuido mis grillz?", "respuesta": "Con tu pieza recibes una guía de cuidados: cómo limpiarla, cómo guardarla y qué evitar. Y si tienes dudas después, nos escribes y listo." }
+  ]
+}

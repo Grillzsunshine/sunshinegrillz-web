@@ -1,0 +1,144 @@
+---
+permalink: /manual/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Manual · Cómo actualizar tu página · {{ negocio.nombre }}</title>
+<link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
+<style>
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:swap;src:url(/fonts/bodoni-moda.woff2) format('woff2')}
+@font-face{font-family:'Familjen Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/familjen-grotesk.woff2) format('woff2')}
+:root{--paper:#F7F2E8;--ink:#1D1812;--ink-2:#5C5346;--gold:#9C7A21;--gold-2:#D4A843;--line:rgba(29,24,18,.12);--card:#FFFDF8}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Familjen Grotesk','Helvetica Neue',Arial,sans-serif;line-height:1.55;font-size:17px}
+.wrap{width:min(720px,calc(100% - 40px));margin:0 auto;padding:40px 0 90px}
+h1,h2{font-family:'Bodoni Moda','Didot',serif;font-weight:500;line-height:1.05;letter-spacing:-.005em;margin:0}
+h1{font-size:clamp(38px,7vw,58px)}
+h2{font-size:clamp(26px,4vw,34px);margin:56px 0 14px;padding-top:28px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:26px 0 8px}
+.eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+.lead{font-size:19px;color:var(--ink-2);margin:16px 0 0}
+p{margin:10px 0}
+ol,ul{padding-left:22px;margin:10px 0}
+li{margin:8px 0}
+li::marker{color:var(--gold);font-weight:700}
+kbd,.ui{display:inline-block;padding:1px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);font-size:15px;font-weight:600;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.card.gold{border-color:rgba(156,122,33,.35);background:#FBF5E4}
+.card b{color:var(--ink)}
+a{color:var(--gold);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#1D1812;color:#F1D48A;font-size:13px;font-weight:600;letter-spacing:.04em}
+.grid{display:grid;gap:12px;margin:14px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.grid .card{margin:0}
+.grid h3{margin-top:0}
+small{color:var(--ink-2)}
+.toc{columns:2;gap:24px;font-size:15px}
+@media(max-width:520px){.toc{columns:1}}
+.toc a{font-weight:500;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">{{ negocio.nombre }} · Manual del dueño</p>
+  <h1>Cómo actualizar tu página.</h1>
+  <p class="lead">Todo lo que necesitas para cambiar fotos, textos, el número de WhatsApp o poner una promo — desde tu celular, sin programar y sin depender de nadie.</p>
+
+  <div class="card gold">
+    <b>Tu editor:</b> <a href="{{ site.url }}/admin/">{{ site.url | replace("https://", "") }}/admin/</a><br>
+    <b>Esta guía:</b> <a href="{{ site.url }}/manual/">{{ site.url | replace("https://", "") }}/manual/</a> — guárdala en favoritos.
+  </div>
+
+  <div class="toc">
+    <a href="#tienes">1. Qué tienes y de quién es</a><br>
+    <a href="#entrar">2. Entrar al editor</a><br>
+    <a href="#fotos">3. Cambiar o agregar fotos</a><br>
+    <a href="#whatsapp">4. Cambiar el WhatsApp</a><br>
+    <a href="#promo">5. Poner una promo (aviso)</a><br>
+    <a href="#textos">6. Cambiar textos y preguntas</a><br>
+    <a href="#publicar">7. Ver el cambio en vivo</a><br>
+    <a href="#problemas">8. Si algo sale mal</a><br>
+    <a href="#cuentas">9. Cuentas, pagos y respaldo</a>
+  </div>
+
+  <h2 id="tienes">1. Qué tienes y de quién es</h2>
+  <p>Tu página está hecha con piezas estándar, todas registradas <b>con tu correo y a tu nombre</b>. Nada depende de la persona que la construyó.</p>
+  <div class="grid">
+    <div class="card"><h3>🌐 El dominio</h3><p><b>{{ site.url | replace("https://", "") }}</b>. Está en tu cuenta de Netlify y se renueva solo cada año con tu tarjeta.</p></div>
+    <div class="card"><h3>🚀 Netlify</h3><p>Donde la página se publica en internet. Gratis. Entras con tu cuenta de GitHub.</p></div>
+    <div class="card"><h3>📦 GitHub</h3><p>Donde viven el código, los textos y las fotos, con historial de cada cambio. Gratis.</p></div>
+    <div class="card"><h3>✏️ El editor (/admin/)</h3><p>La pantalla donde cambias todo. Guarda directo en GitHub y Netlify publica solo.</p></div>
+  </div>
+
+  <h2 id="entrar">2. Entrar al editor</h2>
+  <ol>
+    <li>Abre <a href="{{ site.url }}/admin/">{{ site.url | replace("https://", "") }}/admin/</a> en tu celular o computador.</li>
+    <li>Toca <span class="ui">Sign In with GitHub</span> (entrar con GitHub).</li>
+    <li>Escribe tu correo y contraseña de GitHub. Si te pide un código, ábrelo en la app de GitHub o revisa tus mensajes.</li>
+    <li>Listo. Verás cuatro pantallas: <span class="ui">📸 Galería de trabajos</span>, <span class="ui">🏪 Datos del negocio</span>, <span class="ui">✍️ Textos de la página</span> y <span class="ui">❓ Preguntas frecuentes</span>.</li>
+  </ol>
+  <p><small>El editor está en inglés en sus botones (Save = guardar, Add = agregar, Browse = buscar en tu celular, ✕ = quitar), pero todos los campos están en español.</small></p>
+
+  <h2 id="fotos">3. Cambiar o agregar fotos</h2>
+  <ol>
+    <li>Entra a <span class="ui">📸 Galería de trabajos</span>.</li>
+    <li>En la lista <b>Fotos</b>, toca <span class="ui">+ Add Foto</span> para agregar una nueva, o toca una existente para cambiarla.</li>
+    <li>En el recuadro de la foto toca <span class="ui">Browse</span> y elige la foto de tu celular (o <span class="ui">Paste Image</span> si la copiaste). Se comprime sola (no importa si pesa mucho).</li>
+    <li>Escribe un <b>título corto</b> (ej. <i>Full set · plata 980</i>) y una <b>descripción</b> de una frase: eso ayuda a que Google te encuentre.</li>
+    <li>Para cambiar el orden usa las flechas ↑ ↓ de cada foto (en computador también puedes arrastrar). Para quitar una, toca la ✕. La primera sale más grande en el celular.</li>
+    <li>Toca <span class="ui">Save</span> arriba a la derecha.</li>
+  </ol>
+  <div class="card">
+    <b>Fotos que venden:</b> verticales (formato 4:5 como Instagram), con buena luz, sin marcas de agua de otras apps y mostrando la pieza de cerca. Entre 6 y 12 fotos es lo ideal.
+  </div>
+  <p>La <b>foto principal</b> de la portada y la foto del <b>cierre</b> se cambian en <span class="ui">✍️ Textos de la página</span> → Portada / Cierre. La foto que sale <b>al compartir tu link</b> por WhatsApp está en <span class="ui">🏪 Datos del negocio</span> → Foto al compartir el link.</p>
+
+  <h2 id="whatsapp">4. Cambiar el WhatsApp o el mensaje</h2>
+  <ol>
+    <li>Entra a <span class="ui">🏪 Datos del negocio</span>.</li>
+    <li><b>Número de WhatsApp:</b> escribe <b>57</b> seguido de tus 10 dígitos, todo junto (ej. <i>573001234567</i>). Sin +, sin espacios.</li>
+    <li><b>Mensaje que llega escrito:</b> es lo que el cliente ve ya escrito al tocar el botón. Déjalo corto y amable.</li>
+    <li><span class="ui">Save</span>. Todos los botones de la página cambian a la vez.</li>
+  </ol>
+
+  <h2 id="promo">5. Poner una promo (aviso arriba de la página)</h2>
+  <ol>
+    <li><span class="ui">🏪 Datos del negocio</span> → activa <b>Mostrar aviso arriba de la página</b>.</li>
+    <li>Escribe el <b>Texto del aviso</b> (ej. <i>🔥 Promo de septiembre: 10% en full sets de plata</i>).</li>
+    <li><span class="ui">Save</span>. Cuando termine la promo, desactívalo y guarda otra vez.</li>
+  </ol>
+
+  <h2 id="textos">6. Cambiar textos y preguntas</h2>
+  <p><span class="ui">✍️ Textos de la página</span> tiene la portada, la cinta de materiales, los pasos, las tarjetas destacadas y el cierre. <span class="ui">❓ Preguntas frecuentes</span> tiene las preguntas con sus respuestas (puedes agregar, quitar y reordenar).</p>
+  <div class="card">
+    <b>“Parte del título en dorado”:</b> escribe exactamente las palabras del título que quieres ver en cursiva dorada. Ejemplo: título <i>Grillz hechos a tu medida</i> → parte en dorado <i>a tu medida</i>. Si lo dejas vacío, el título sale todo en blanco.
+  </div>
+  <p>Para Google: en <span class="ui">🏪 Datos del negocio</span> están el <b>Título para Google</b> y la <b>Descripción para Google</b>. Menciona siempre <i>grillz</i>, tu ciudad y tus materiales.</p>
+
+  <h2 id="publicar">7. Ver el cambio en vivo</h2>
+  <p>Después de <span class="ui">Save</span>, la página se reconstruye sola. Tarda entre <b>1 y 3 minutos</b>. Luego abre <a href="{{ site.url }}/">{{ site.url | replace("https://", "") }}</a> y recárgala (si no ves el cambio, ábrela en una ventana de incógnito).</p>
+
+  <h2 id="problemas">8. Si algo sale mal</h2>
+  <ul>
+    <li><b>No veo el cambio después de 5 minutos.</b> Entra a <a href="https://app.netlify.com" target="_blank" rel="noopener">app.netlify.com</a> → tu proyecto → <span class="ui">Deploys</span>. Si el último está en rojo (Failed), toca <span class="ui">Retry</span>. Si sigue en rojo, casi siempre es una foto dañada: bórrala del editor y guarda de nuevo.</li>
+    <li><b>Borré algo sin querer.</b> Nada se pierde: cada guardado queda con fecha en GitHub y cualquier persona que sepa de páginas web puede regresar a la versión anterior.</li>
+    <li><b>No puedo entrar a GitHub.</b> Usa “Forgot password” con tu correo, o los códigos de recuperación que guardaste el día de la entrega.</li>
+    <li><b>Necesito un cambio más grande</b> (nueva sección, otro diseño). Cualquier diseñador o programador web puede hacerlo: el proyecto usa herramientas estándar (Eleventy + Sveltia CMS + Netlify) y trae instrucciones adentro.</li>
+  </ul>
+
+  <h2 id="cuentas">9. Cuentas, pagos y respaldo</h2>
+  <div class="card">
+    <p><b>Lo único que se paga:</b> el dominio, una vez al año, con la tarjeta guardada en Netlify. Netlify te avisa por correo antes de cobrar. Si la tarjeta vence, actualízala en <span class="ui">Team settings → Billing</span> para que la página no se caiga.</p>
+    <p><b>Gratis para siempre:</b> Netlify (publicación) y GitHub (código y fotos), dentro de los límites que una página como esta nunca alcanza.</p>
+    <p><b>Guarda en un lugar seguro:</b> el correo y la contraseña de GitHub, los códigos de recuperación de GitHub, y esta guía.</p>
+  </div>
+  <p><span class="pill">✦ Hecho para {{ negocio.nombre }}</span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+---
+permalink: /
+---
+{#- Enlace de WhatsApp calculado una sola vez -#}
+{%- set waHref = negocio.whatsapp | wa(negocio.whatsapp_mensaje) -%}
+{%- set igUrl = "https://www.instagram.com/" + negocio.instagram + "/" -%}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ negocio.seo_titulo }}</title>
+<meta name="description" content="{{ negocio.seo_descripcion }}">
+<link rel="canonical" href="{{ site.url }}/">
+<meta name="theme-color" content="#070604">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="{{ negocio.nombre }}">
+<meta property="og:title" content="{{ negocio.seo_titulo }}">
+<meta property="og:description" content="{{ negocio.seo_descripcion }}">
+<meta property="og:url" content="{{ site.url }}/">
+<meta property="og:image" content="{{ site.url }}{% ogImage negocio.seo_imagen %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ negocio.seo_titulo }}">
+<meta name="twitter:description" content="{{ negocio.seo_descripcion }}">
+<meta name="twitter:image" content="{{ site.url }}{% ogImage negocio.seo_imagen %}">
+
+<link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/icons/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/bodoni-moda.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/familjen-grotesk.woff2" crossorigin>
+<style>{% include "site.css" %}</style>
+
+{#- Datos estructurados para Google: negocio local + preguntas frecuentes -#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": {{ negocio.nombre | json | safe }},
+  "description": {{ negocio.seo_descripcion | json | safe }},
+  "url": "{{ site.url }}/",
+  "image": "{{ site.url }}{% ogImage negocio.seo_imagen %}",
+  "telephone": {{ negocio.whatsapp | telInternacional | json | safe }},
+  "address": {
+    "@type": "PostalAddress",
+    {%- if negocio.direccion %}
+    "streetAddress": {{ negocio.direccion | json | safe }},
+    {%- endif %}
+    "addressLocality": {{ negocio.ciudad | json | safe }},
+    "addressCountry": "CO"
+  },
+  "areaServed": { "@type": "Country", "name": "Colombia" },
+  {%- if negocio.horario %}
+  "openingHours": {{ negocio.horario | json | safe }},
+  {%- endif %}
+  "sameAs": [ {{ igUrl | json | safe }} ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for q in preguntas.items %}
+    { "@type": "Question", "name": {{ q.pregunta | json | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ q.respuesta | json | safe }} } }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- if negocio.pixel_meta %}
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','{{ negocio.pixel_meta }}');fbq('track','PageView');</script>
+{%- endif %}
+{%- if negocio.google_analytics %}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ negocio.google_analytics }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ negocio.google_analytics }}');</script>
+{%- endif %}
+</head>
+<body>
+
+{%- if negocio.aviso_activo and negocio.aviso_texto %}
+<div class="aviso" role="status">{{ negocio.aviso_texto }}</div>
+{%- endif %}
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="{{ negocio.nombre }}">
+      <img src="{{ negocio.logo }}" alt="" width="40" height="40" eleventy:ignore>
+      <span>{{ negocio.nombre }}<small>{{ negocio.lema }}</small></span>
+    </a>
+    <a class="btn sm" href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">{% include "wa-icon.njk" %}Escríbenos</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-photo up d1">
+      <img src="{{ textos.hero.foto }}" alt="Grillz de {{ negocio.nombre }} en {{ negocio.ciudad }}" loading="eager" fetchpriority="high" sizes="(min-width: 860px) 46vw, 100vw">
+      {%- if textos.hero.foto_etiqueta %}<span class="tag"><i></i>{{ textos.hero.foto_etiqueta }}</span>{% endif %}
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow up d1">{{ textos.hero.eyebrow }}</p>
+      <h1 class="up d2">{{ textos.hero.titulo | destacar(textos.hero.titulo_destacado) | safe }}</h1>
+      <div class="rule up d3"></div>
+      <p class="lead up d3">{{ textos.hero.texto }}</p>
+      <div class="cta-row up d4">
+        <a class="btn xl" href="{{ waHref }}" target="_blank" rel="noopener">{% include "wa-icon.njk" %}{{ textos.hero.boton }}</a>
+        {%- if textos.hero.nota %}<span class="ghost">{{ textos.hero.nota }}</span>{% endif %}
+      </div>
+      {%- if textos.hero.confianza and textos.hero.confianza.length %}
+      <div class="trust up d5">
+        {%- for t in textos.hero.confianza %}<div>{{ t }}</div>{% endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+{%- if textos.materiales and textos.materiales.length %}
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {%- for i in range(0, 2) %}{% for m in textos.materiales %}<span>{{ m }}</span>{% endfor %}{% endfor %}
+  </div>
+</div>
+{%- endif %}
+
+<section id="trabajos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">{{ galeria.eyebrow }}</p>
+        <h2>{{ galeria.titulo | destacar(galeria.titulo_destacado) | safe }}</h2>
+      </div>
+      {%- if galeria.texto %}<p>{{ galeria.texto }}</p>{% endif %}
+    </div>
+    <div class="grid">
+      {%- for f in galeria.fotos %}
+      <a class="shot" href="{{ waHref }}" target="_blank" rel="noopener">
+        <img src="{{ f.imagen }}" alt="{{ f.descripcion or f.titulo }}" sizes="{% if loop.first %}(min-width: 860px) 33vw, 100vw{% else %}(min-width: 860px) 33vw, 50vw{% endif %}">
+        {%- if f.titulo %}<span class="cap">{{ f.titulo }}</span>{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="como" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">{{ textos.pasos.eyebrow }}</p>
+        <h2>{{ textos.pasos.titulo | destacar(textos.pasos.titulo_destacado) | safe }}</h2>
+      </div>
+      {%- if textos.pasos.texto %}<p>{{ textos.pasos.texto }}</p>{% endif %}
+    </div>
+    <div class="steps n{{ textos.pasos.items.length }}">
+      {%- for p in textos.pasos.items %}
+      {%- set n = ("0" + loop.index) if loop.index < 10 else loop.index %}
+      <article class="step" data-n="{{ n }}">
+        <div class="n">{{ n }}</div>
+        <h3>{{ p.titulo }}</h3>
+        <p>{{ p.texto }}</p>
+        {%- if p.chips and p.chips.length %}
+        <div class="step-note">{% for c in p.chips %}<span class="chip"><i></i>{{ c }}</span>{% endfor %}</div>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{%- if textos.destacados and textos.destacados.length %}
+<section style="padding-top:0">
+  <div class="wrap band n{{ textos.destacados.length }}">
+    {%- for d in textos.destacados %}
+    <div class="card">
+      <img src="{{ d.imagen }}" alt="" sizes="(min-width: 860px) 55vw, 100vw">
+      <div class="veil"></div>
+      <div class="txt">
+        <p class="eyebrow">{{ d.eyebrow }}</p>
+        <h3>{{ d.titulo }}</h3>
+        {%- if d.texto %}<p>{{ d.texto }}</p>{% endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">{{ preguntas.eyebrow }}</p>
+        <h2>{{ preguntas.titulo | destacar(preguntas.titulo_destacado) | safe }}</h2>
+      </div>
+    </div>
+    <div class="faq">
+      {%- for q in preguntas.items %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ q.pregunta }}</summary>
+        <p>{{ q.respuesta }}</p>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="inner">
+      <img src="{{ textos.cierre.imagen }}" alt="" sizes="100vw">
+      <div class="veil"></div>
+      <div class="txt">
+        <p class="eyebrow">{{ textos.cierre.eyebrow }}</p>
+        <h2>{{ textos.cierre.titulo | destacar(textos.cierre.titulo_destacado) | safe }}</h2>
+        <p class="lead">{{ textos.cierre.texto }}</p>
+        <div class="cta-row">
+          <a class="btn xl" href="{{ waHref }}" target="_blank" rel="noopener">{% include "wa-icon.njk" %}{{ textos.cierre.boton }}</a>
+          {%- if textos.cierre.nota %}<span class="ghost">{{ textos.cierre.nota }}</span>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="{{ negocio.logo }}" alt="" width="40" height="40" eleventy:ignore><span>{{ negocio.nombre }}<small>{{ negocio.lema }}</small></span></a>
+    <nav class="links" aria-label="Secciones">
+      <a href="{{ igUrl }}" target="_blank" rel="noopener">@{{ negocio.instagram }}</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="meta">
+      <span>© {{ "" | year }} {{ negocio.nombre }} · {{ negocio.ciudad }}, Colombia{% if negocio.direccion %} · {{ negocio.direccion }}{% endif %}{% if negocio.horario %} · {{ negocio.horario }}{% endif %}</span>
+      {%- if negocio.mostrar_credito %}<span class="credit">Sitio web por <a href="https://zerotwelve.io" target="_blank" rel="noopener">ZeroTwelve</a></span>{% endif %}
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn" href="{{ waHref }}" target="_blank" rel="noopener">{% include "wa-icon.njk" %}{{ textos.hero.boton }}</a>
+</div>
+
+<script>{% include "site.js" %}</script>
+</body>
+</html>

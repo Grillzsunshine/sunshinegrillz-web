@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "foto": "/img/uploads/hero.jpg",
+    "foto_etiqueta": "Hecho a mano · Medellín",
+    "eyebrow": "Joyería dental · Grillz personalizados",
+    "titulo": "Grillz hechos a tu medida, en oro 18K y plata 980.",
+    "titulo_destacado": "a tu medida",
+    "texto": "Toma de molde en Medellín, envíos a toda Colombia. Cristales Swarovski, moissanita, diamantes VVS y esmeralda colombiana — tú eliges el diseño, nosotros lo hacemos brillar.",
+    "boton": "Cotizar por WhatsApp",
+    "nota": "Respuesta inmediata · sin compromiso",
+    "confianza": [
+      "+14K en Instagram",
+      "Vistos en Telemundo",
+      "Oro 18K garantizado"
+    ]
+  },
+  "materiales": [
+    "Oro 18K amarillo y blanco",
+    "Plata ley 980",
+    "Cristales Swarovski",
+    "Moissanita",
+    "Diamantes VVS",
+    "Esmeralda colombiana",
+    "Toothgems",
+    "Envíos a toda Colombia"
+  ],
+  "pasos": {
+    "eyebrow": "Cómo funciona",
+    "titulo": "Tres pasos. Cero enredos.",
+    "titulo_destacado": "Cero enredos.",
+    "texto": "Escríbenos y en minutos sabes precio, proceso y fecha de tu toma de molde.",
+    "items": [
+      {
+        "titulo": "Escríbenos por WhatsApp",
+        "texto": "Cuéntanos qué quieres — cuántos dientes, oro o plata, con o sin piedras — y te damos el precio de una vez.",
+        "chips": ["Respuesta inmediata", "24 / 7"]
+      },
+      {
+        "titulo": "Toma de molde",
+        "texto": "En Medellín agendamos tu cita en el momento. Si estás en otra ciudad, te explicamos cómo iniciar tu pieza a distancia.",
+        "chips": ["Medellín", "Toda Colombia"]
+      },
+      {
+        "titulo": "Fabricación y entrega",
+        "texto": "Tu pieza se hace a mano sobre tu molde. La recibes con ajuste y guía de cuidados para que brille por años.",
+        "chips": ["Hecho a mano", "Guía de cuidados"]
+      }
+    ]
+  },
+  "destacados": [
+    {
+      "imagen": "/img/uploads/artist.jpg",
+      "eyebrow": "Para artistas y para ti",
+      "titulo": "Diseños exclusivos, calidad de joyería.",
+      "texto": "Materiales legítimos, anatomía de tus dientes naturales y un brillo que habla por sí solo."
+    },
+    {
+      "imagen": "/img/uploads/tv.jpg",
+      "eyebrow": "Vistos en Telemundo",
+      "titulo": "La fiebre mundialista llegó hasta los dientes.",
+      "texto": "Nuestro trabajo para el Mundial 2026, en televisión."
+    }
+  ],
+  "cierre": {
+    "imagen": "/img/uploads/cta.jpg",
+    "eyebrow": "Empecemos",
+    "titulo": "¿Listo para los tuyos?",
+    "titulo_destacado": "los tuyos",
+    "texto": "Escríbenos, cuéntanos tu diseño y agenda tu toma de molde. Así de simple.",
+    "boton": "Cotizar por WhatsApp",
+    "nota": "Medellín · envíos a toda Colombia"
+  }
+}

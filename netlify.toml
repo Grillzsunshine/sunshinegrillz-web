@@ -1,0 +1,8 @@
+# Netlify construye el sitio automáticamente cada vez que se guarda algo en GitHub
+# (desde el editor /admin/ o desde cualquier commit). No hay que tocar nada aquí.
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"

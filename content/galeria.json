@@ -1,0 +1,14 @@
+{
+  "eyebrow": "Trabajos recientes",
+  "titulo": "Cada pieza, única.",
+  "titulo_destacado": "única",
+  "texto": "Sólidos, con ventana, con letras o con piedras. Un cap, seis superiores o el set completo — todo empieza con tu molde.",
+  "fotos": [
+    { "imagen": "/img/uploads/g-plata980.jpg", "titulo": "Full set · plata 980", "descripcion": "Full set de grillz en plata ley 980 sobre el molde" },
+    { "imagen": "/img/uploads/g-oroblanco.jpg", "titulo": "Oro 18K + esmeralda", "descripcion": "Cap de grillz en oro 18K con esmeralda colombiana" },
+    { "imagen": "/img/uploads/g-star.jpg", "titulo": "Star + full cap", "descripcion": "Grillz estrella y full cap en plata con moissanita" },
+    { "imagen": "/img/uploads/g-gold18k.jpg", "titulo": "Toothgem · oro 18K", "descripcion": "Toothgem letra en oro 18K" },
+    { "imagen": "/img/uploads/g-theyknow.jpg", "titulo": "Custom · piedras", "descripcion": "Clienta con grillz personalizados con piedras de Sunshine Grillz" },
+    { "imagen": "/img/uploads/g-sinfiltros.jpg", "titulo": "Inferiores · plata 980", "descripcion": "Grillz inferiores en plata 980 con piedras" }
+  ]
+}

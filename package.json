@@ -1,0 +1,19 @@
+{
+  "name": "sunshinegrillz-web",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Sunshine Grillz (Medellín). Landing estática con Eleventy + editor Sveltia CMS.",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --quiet",
+    "preview": "eleventy --serve --quiet --port=8085"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "@11ty/eleventy-img": "7.0.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}
