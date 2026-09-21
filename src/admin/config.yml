@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: CAMBIAR-USUARIO-GITHUB/sunshinegrillz-web   # ← usuario/repositorio en GitHub
+  repo: ZeroTwelveDev/sunshinegrillz-web   # ← CAMBIAR al usuario del cliente en la entrega (paso B)
   branch: main
   # Inicio de sesión: "Sign in with GitHub" usa el proveedor OAuth de Netlify
   # (se configura una sola vez en Netlify: Access & security → OAuth → GitHub).
