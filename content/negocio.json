@@ -8,7 +8,7 @@
   "ciudad": "Medellín",
   "direccion": "",
   "horario": "",
-  "aviso_activo": true,
+  "aviso_activo": false,
   "aviso_texto": "Prueba",
   "seo_titulo": "Grillz personalizados en oro 18K y plata 980 en Medellín · Sunshine Grillz",
   "seo_descripcion": "Grillz hechos a tu medida en Medellín. Oro 18K, plata ley 980, cristales Swarovski, moissanita, diamantes VVS y esmeralda colombiana. Envíos a toda Colombia. Cotiza por WhatsApp.",
