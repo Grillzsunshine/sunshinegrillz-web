@@ -5,7 +5,7 @@
     "eyebrow": "Joyería dental · Grillz personalizados",
     "titulo": "Grillz hechos a tu medida, en oro 18K y plata 980.",
     "titulo_destacado": "a tu medida",
-    "texto": "Toma de molde en Medellín, envíos a toda Colombia. Cristales Swarovski, moissanita, diamantes VVS y esmeralda colombiana — tú eliges el diseño, nosotros lo hacemos brillar.",
+    "texto": "Toma de molde en Medellín, envíos nacionales e internacionales . Cristales Swarovski, moissanitas, diamantes VVS y esmeralda colombiana — Diseñamos joyas unicas y exclusivas",
     "boton": "Cotizar por WhatsApp",
     "nota": "Respuesta inmediata · sin compromiso",
     "confianza": [
@@ -15,14 +15,14 @@
     ]
   },
   "materiales": [
-    "Oro 18K amarillo y blanco",
+    "Oro 18K Amarillo, Blanco y Rosa",
     "Plata ley 980",
     "Cristales Swarovski",
-    "Moissanita",
-    "Diamantes VVS",
+    "Moissanitas",
+    "Diamantes VVS1",
     "Esmeralda colombiana",
     "Toothgems",
-    "Envíos a toda Colombia"
+    "Envíos Nacionales e Internacionales"
   ],
   "pasos": {
     "eyebrow": "Cómo funciona",
@@ -33,17 +33,26 @@
       {
         "titulo": "Escríbenos por WhatsApp",
         "texto": "Cuéntanos qué quieres — cuántos dientes, oro o plata, con o sin piedras — y te damos el precio de una vez.",
-        "chips": ["Respuesta inmediata", "24 / 7"]
+        "chips": [
+          "Respuesta inmediata",
+          "24 / 7"
+        ]
       },
       {
         "titulo": "Toma de molde",
         "texto": "En Medellín agendamos tu cita en el momento. Si estás en otra ciudad, te explicamos cómo iniciar tu pieza a distancia.",
-        "chips": ["Medellín", "Toda Colombia"]
+        "chips": [
+          "Medellín",
+          "Toda Colombia"
+        ]
       },
       {
         "titulo": "Fabricación y entrega",
         "texto": "Tu pieza se hace a mano sobre tu molde. La recibes con ajuste y guía de cuidados para que brille por años.",
-        "chips": ["Hecho a mano", "Guía de cuidados"]
+        "chips": [
+          "Hecho a mano",
+          "Guía de cuidados"
+        ]
       }
     ]
   },
